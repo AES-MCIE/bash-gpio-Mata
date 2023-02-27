@@ -1,20 +1,26 @@
 # Introduction 
-As we'll see in future installments of this blog series, there are different ways to access GPIO hardware from programs, but sysfs is a simple one that is supported by the Linux kernel and makes the devices visible in the file system so we can experiment from the command line without needing to write any code. For simple applications you can use it this way, either interactively or by putting the commands in shell scripts.
+There are different ways and tools to access BeagleBone's GPIO hardware from programs, but `sysfs` is a simple one that is supported by the **Linux kernel** and makes the devices visible in the file system so we can work from the command line without needing to write any code. For simple applications you can use it with the `sysfs` way, either interactively or by putting the commands in shell scripts.
 
-Sysfs is a pseudo filesystem provided by the Linux kernel that makes information about various kernel subsystems, hardware devices, and device drivers available in user space through virtual files. GPIO devices appear as part of sysfs.
+`Sysfs` is a pseudo filesystem provided by the **Linux kernel** that makes information about various kernel subsystems, hardware devices, and device drivers available in user space through virtual files. GPIO devices appear as part of sysfs.
 
-**Note: This code and commands have been tested directly on a RaspberryPi4. However, during tests on MD lectures, the same commands look to work properly**
+# RaspberryPi 4 (RBPi4)
 
-# First steps
+**Note: This code and commands have been tested directly on a RaspberryPi4. The GPIO process for the RBPi4 is quiete different fro, the BeagleBone Boards, please considers the instructions for RBPi4 or BBB.**
 
-The system has some `sysfs` drivers already loaded, you can search for them at `/sys/class/gpio/`:
+## Basic considerations
+
+![](./rbpi4.png)
+
+## First steps
+
+The system has some `sysfs` GPIO drivers already loaded, you can search for them at `/sys/class/gpio/`:
 ```
 ls /sys/class/gpio
 export  gpiochip0  gpiochip504  unexport
 ```
 We'll look at how to use this interface next. Note that the device names starting with "gpiochip" are the GPIO controllers and we won't directly use them.
 
-Next, the basic steps to use a GPIO pin from the `sysfs` interface are the following:
+Next, the basic steps to use a GPIO pin from the `sysfs` interface are:
 
 1. Export the pin.
 2. Set the pin direction (input or output).
@@ -33,22 +39,26 @@ then, the `gpio24` linksys file is abilable at
 ls /sys/class/gpio/
 export  gpio24  gpiochip0  gpiochip504  unexport
 ```
-you can see now inside the `gpio24` folder a series of configuration files
-
+you can go now and observe inside the `gpio24` folder a series of configuration files
 ```
 ls /sys/class/gpio/gpio24/
 active_low  device  direction  edge  power  subsystem  uevent  value
 ```
-
-the ones that we require for now are the `direction` and `value`, then, to make the GPIO24 an output and write a logic 1 (3V):
-
+the ones that we require for now are the `direction` and `value`, then, to make the GPIO24 an output write a logic 1 (3V):
 ```
 echo out >> /sys/class/gpio/gpio24/direction
 echo 1 >> /sys/class/gpio/gpio24/value
 ```
 
+# BeagleBone Black
+
+## Basic considerations
+
+![](./bbb.png)
+
+
 # Your work and description here
 
-Add here the description and the code that you develop to create a bash function to configure any GPIO to write (output) or read(input) by passing arguments to your command `gpio.sh`.
+**Add here the description and the code that you develop to create a bash function to configure any GPIO to write (output) or read(input) by passing arguments to your command `gpio.sh`**.
 
 
