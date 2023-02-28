@@ -87,7 +87,7 @@ So, a final command could be:
 ```
 or 
 ```
-`./gpio-bash.sh gpio 20 in 1`.
+./gpio-bash.sh gpio 20 in 1.
 ```
 If you want to configure a specific pin as an `Output`, you have to  follow the next commands:
 `./gpio-bash.sh` `gpio` `numberOfPin` `out` `value`
