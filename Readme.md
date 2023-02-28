@@ -75,9 +75,11 @@ Final directory - direction: Exists
 Final directory - value: Exists
 ```
 That means the process is working correctly. Otherwise, an error message will be deployed.
+
 Following, the pin shall be configured as an `Input`, and finally show the lecture of the pin.
 If the lecture shows the number `1`, that means there is a logical signal (3V recommended), or it's floated.
 If the lecture shows the number `0`, that means there is no voltage.
+
 Also there is no problem if you write a fourth argument like `0` or `1`, it shall show the same result.
 So, a final command could be:
 ```
@@ -95,9 +97,11 @@ Final directory - direction: Exists
 Final directory - value: Exists
 ```
 That means the process is working correctly. Otherwise, an error message will be deployed.
+
 The next step is that the pin configured as an `Output` can give 2 different signals:
 If the fourth argument was `1`, then the pin will give a logical signal of 3V.
 If the fourth argument was `0`, then the pin will have no voltage (0V).
+
 So, a final command could be:
 ```
 ./gpio-bash.sh gpio 20 out 1
