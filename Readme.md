@@ -65,6 +65,8 @@ In this case, the topic are the GPIO ports, those can be set as `Input` or `Outp
 
 It is necessary to use at least 3 arguments minimum in case of choosing `Input`, and 4 arguments in the case of `Output`.
 
+## Input configuration 
+
 If you want to configure a specific pin as an `Input`, yo have to follow the next commands:
 
 `./gpio-bash.sh` `gpio` `numberOfPin` `in`
@@ -89,6 +91,9 @@ or
 ```
 ./gpio-bash.sh gpio 20 in 1
 ```
+
+## Output configuration
+
 If you want to configure a specific pin as an `Output`, you have to  follow the next commands:
 `./gpio-bash.sh` `gpio` `numberOfPin` `out` `value`
 Then, the script will verify if the GPIO's directory exists. If it does, it shall show a message:
