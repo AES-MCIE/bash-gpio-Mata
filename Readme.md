@@ -61,6 +61,7 @@ echo 1 >> /sys/class/gpio/gpio24/value
 
 There are different types of ports in the BeagleBone Black: GPIO, PWM, Timers, UART, TX, I2C and SPI.
 In this case, the topic are the GPIO ports, those can be set as `Input` or `Output`, but there are only a specific number of ports that can be configures with this device, those port numbers are:
+
 `2` to `5`, `7` to `15`, `20`, `22`, `23`, `26`, `27`, `30` to `40`, `44` to `49`, `51`, `60` to `63`, `65` to `81`, `86` to `89`, `100` to `112`, `117`, `123`, `125`.
 
 It is necessary to use at least 3 arguments minimum in case of choosing `Input`, and 4 arguments in the case of `Output`.
@@ -95,7 +96,9 @@ or
 ## Output configuration
 
 If you want to configure a specific pin as an `Output`, you have to  follow the next commands:
+
 `./gpio-bash.sh` `gpio` `numberOfPin` `out` `value`
+
 Then, the script will verify if the GPIO's directory exists. If it does, it shall show a message:
 ```
 Final directory - direction: Exists
