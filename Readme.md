@@ -120,5 +120,5 @@ or
 
 Also, if you want to know how the script works at the terminal, you can use the command `help`.
 ```
-`./gpio-bash.sh help`
+./gpio-bash.sh help
 ```
