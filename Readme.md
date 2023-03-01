@@ -64,13 +64,13 @@ In this case, the topic are the GPIO ports, those can be set as `Input` or `Outp
 
 `2` to `5`, `7` to `15`, `20`, `22`, `23`, `26`, `27`, `30` to `40`, `44` to `49`, `51`, `60` to `63`, `65` to `81`, `86` to `89`, `100` to `112`, `117`, `123`, `125`.
 
-It is necessary to use at least 3 arguments minimum in case of choosing `Input`, and 4 arguments in the case of `Output`.
+It is necessary to use at least 2 arguments minimum in case of choosing `Input`, and 3 arguments in the case of `Output`.
 
 ## Input configuration 
 
 If you want to configure a specific pin as an `Input`, yo have to follow the next commands:
 
-`./gpio-bash.sh` `gpio` `numberOfPin` `in`
+`./gpio-bash.sh` `in` `numberOfPin`
 
 Then, the script will verify if the GPIO's directory exists. If it does, it shall show a message:
 ```
@@ -86,18 +86,18 @@ If the lecture shows the number `0`, that means there is no voltage.
 Also there is no problem if you write a fourth argument like `0` or `1`, it shall show the same result.
 So, a final command could be:
 ```
-./gpio-bash.sh gpio 20 in
+./gpio-bash.sh in 20
 ```
 or 
 ```
-./gpio-bash.sh gpio 20 in 1
+./gpio-bash.sh in 20 1
 ```
-
+Now the pin number 20 shall read voltage or ground.
 ## Output configuration
 
 If you want to configure a specific pin as an `Output`, you have to  follow the next commands:
 
-`./gpio-bash.sh` `gpio` `numberOfPin` `out` `value`
+`./gpio-bash.sh` `out` `numberOfPin` `value`
 
 Then, the script will verify if the GPIO's directory exists. If it does, it shall show a message:
 ```
@@ -112,12 +112,13 @@ If the fourth argument was `0`, then the pin will have no voltage (0V).
 
 So, a final command could be:
 ```
-./gpio-bash.sh gpio 20 out 1
+./gpio-bash.sh out 20 1
 ```
 or
 ```
-./gpio-bash.sh gpio 20 out 0
+./gpio-bash.sh out 20 0
 ```
+Now the pin number 20 shall give a 3V signal or 0V.
 
 ## Help menu
 
